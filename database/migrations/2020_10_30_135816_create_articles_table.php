@@ -19,19 +19,22 @@ class CreateArticlesTable extends Migration
             $table->string('src_name');
             $table->string('url');
             $table->string('headline')->unique();
-             $table->string('lede');
-             $table->string('thumbnail');
-             $table->string('src');
-             $table->string('category');
-             $table->string('catLink');
-             $table->string('tag');
-             $table->string('images');
-             $table->boolean('isVid');
-             $table->string('vidLen');
-             $table->string('author');
-             $table->string('date');
-             $table->timestamp('created_at')->useCurrent();
-             $table->timestamp('updated_at')->nullable();
+            $table->string('lede');
+            $table->string('thumbnail');
+            $table->string('src');
+            $table->string('type');
+            $table->string('category');
+            $table->string('catLink');
+            $table->string('tag');
+            $table->json('tags')->nullable();
+            $table->json('images')->nullable();
+            $table->boolean('isVid');
+            $table->string('vidLen')->nullable();
+            $table->string('author');
+            $table->json('authors')->nullable();
+            $table->string('date');
+            $table->timestamp('created_at')->useCurrent();
+            $table->timestamp('updated_at')->useCurrent();
         });
     }
 

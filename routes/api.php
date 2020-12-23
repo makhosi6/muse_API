@@ -1,9 +1,10 @@
 <?php
 
+use App\Exceptions\RecordNotFound;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
-// namespace App\Http\Controllers\ArticleController;
+// use App\Http\Controllers\ArticleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,16 @@ use Illuminate\Support\Facades\Route;
 | routes are loaded by the RouteServiceProvider within a group which
 | is assigned the "api" middleware group. Enjoy building your API!
 |
-*/
+ */
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+    try {
+        return $request->user();
+    } catch (RecordNotFound $exception) {
+       throw new RecordNotFound();
+
+    }
+
 });
 Route::get('/articles', 'App\Http\Controllers\ArticleController@index');
 Route::get('/articles/{article}', 'App\Http\Controllers\ArticleController@show');

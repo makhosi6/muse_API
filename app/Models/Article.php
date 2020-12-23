@@ -31,12 +31,23 @@ class Article extends Model
      * @var bool
      */
     public $timestamps = true;
-    // /**
-    //  * The storage format of the model's date columns.
-    //  *
-    //  * @var string
-    //  */
+    /**
+     * The storage format of the model's date columns.
+     *
+     * @var string
+     */
     // protected $dateFormat = 'U';
+       /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        'isVid' => 'boolean',
+        'images' => 'array',
+        'tags' => 'array',
+        'authors' => 'array'
+    ];
 
     protected $fillable = [
         'url_src',
@@ -46,13 +57,16 @@ class Article extends Model
         'lede',
         'thumbnail',
         'src',
+        'type',
         'category',
         'catLink',
         'tag',
+        'tags',
         'images',
         'isVid',
         'vidLen',
         'author',
+        'authors',
         'date'
     ];
 
