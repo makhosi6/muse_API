@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\BadRequest;
 use App\Exceptions\NotAllowed;
+use App\Exceptions\RecordNotFound;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
@@ -11,35 +13,50 @@ class articleController extends Controller
     //
     public function index()
     {
-
-        return Article::all();
-
+        try {
+            return Article::all();
+        } catch (\Exception $th) {
+            throw new RecordNotFound();
+        }
     }
 
     public function show(Article $article)
     {
-        return $article;
+        try {
+            return $article;
+        } catch (\Exception $th) {
+            throw new RecordNotFound();
+        }
     }
 
     public function store(Request $request)
     {
-        $article = Article::create($request->all());
+        try {
+            $article = Article::create($request->all());
+            return response()->json($article, 201);
+        } catch (\Exception $th) {
+            throw new BadRequest();
+        }
 
-        return response()->json($article, 201);
     }
 
     public function update(Request $request, Article $article)
     {
-        $article->update($request->all());
-
-        return response()->json($article, 200);
-
+        try {
+            $article->update($request->all());
+            return response()->json($article, 200);
+        } catch (\Exception $th) {
+            throw new BadRequest();
+        }
     }
 
     public function delete(Article $article)
     {
-        $article->delete();
-        return response()->json(null, 204);
-
+        try {
+            $article->delete();
+            return response()->json(null, 204);
+        } catch (\Exception $th) {
+            throw new NotAllowed();
+        }
     }
 }

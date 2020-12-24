@@ -15,6 +15,7 @@ class RecordNotFound extends Exception
     public function report()
     {
         //
+
     }
 
     /**
@@ -27,7 +28,9 @@ class RecordNotFound extends Exception
     {
         return response()->json([
             "status_message"=>"Not Found",
-            "status_code" => 404
+            "status_code" => 404,
+            "url" => "/".$request->path(),
+            "method" => $request->method(),
         ], 404);
     }
 }

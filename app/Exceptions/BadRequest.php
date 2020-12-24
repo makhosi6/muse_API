@@ -4,10 +4,10 @@ namespace App\Exceptions;
 
 use Exception;
 
-class ServerError extends Exception
+class BadRequest extends Exception
 {
-      //
-      /**
+        //
+     /**
      * Report the exception.
      *
      * @return void
@@ -26,10 +26,10 @@ class ServerError extends Exception
     public function render($request)
     {
         return response()->json([
-            "status_message"=>"Internal Server Error",
-            "status_code" => 500,
+            "status_message"=>"Bad Request",
+            "status_code" => 400,
             "url" => "/".$request->path(),
             "method" => $request->method(),
-        ], 500);
+        ], 400);
     }
 }

@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Facade\FlareClient\Http\Exceptions\NotFound;
 use Illuminate\Http\Request;
 
 class RoutesMiddleware
@@ -17,9 +16,14 @@ class RoutesMiddleware
      */
     public function handle(Request $request, Closure $next)
     {
-        if ($request->routeIs('api/*')) {
-            return $next($request);
+        if (!$request->is('api/*')) {
+            return response()->json([
+                "status_message" => "Method Not Allowed",
+                "status_code" => 405,
+                "url" => "/".$request->path(),
+                "method" => $request->method(),
+            ], 405);
         }
-        // throw new NotFound();
+        return $next($request);
     }
 }

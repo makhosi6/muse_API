@@ -2,7 +2,6 @@
 
 use App\Exceptions\RecordNotFound;
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,8 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/', function () {
-
+Route::get('/api/home', function () {
     return response()->json([
         "status_message"=>"Unauthorized action",
         "status_code" => 403
