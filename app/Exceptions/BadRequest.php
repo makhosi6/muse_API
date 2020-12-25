@@ -28,7 +28,7 @@ class BadRequest extends Exception
         return response()->json([
             "status_message"=>"Bad Request",
             "status_code" => 400,
-            "url" => "/".$request->path(),
+            "path" => $request->path(),
             "method" => $request->method(),
         ], 400);
     }

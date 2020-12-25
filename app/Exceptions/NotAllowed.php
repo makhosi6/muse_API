@@ -28,7 +28,7 @@ class NotAllowed extends Exception
         return response()->json([
             "status_message"=>"Method Not Allowed",
             "status_code" => 405,
-            "url" => "/".$request->path(),
+            "path" => $request->path(),
             "method" => $request->method(),
         ], 405);
     }

@@ -28,7 +28,7 @@ class ServerError extends Exception
         return response()->json([
             "status_message"=>"Internal Server Error",
             "status_code" => 500,
-            "url" => "/".$request->path(),
+            "path" => $request->path(),
             "method" => $request->method(),
         ], 500);
     }
