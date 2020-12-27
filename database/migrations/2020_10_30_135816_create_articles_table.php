@@ -28,7 +28,7 @@ class CreateArticlesTable extends Migration
             $table->string('tag');
             $table->json('tags')->nullable();
             $table->json('images')->nullable();
-            $table->boolean('isVid');
+            $table->boolean('isVid')->nullable();
             $table->string('vidLen')->nullable();
             $table->string('author');
             $table->json('authors')->nullable();

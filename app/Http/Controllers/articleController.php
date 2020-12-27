@@ -49,7 +49,6 @@ class articleController extends Controller
             throw new BadRequest();
         }
     }
-
     public function delete(Article $article)
     {
         try {

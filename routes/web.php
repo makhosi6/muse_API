@@ -19,3 +19,10 @@ Route::get('/api/home', function () {
         "status_code" => 403
     ], 403);
 });
+Route::get('/', function () {
+    return view('welcome');
+});
+Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
+
