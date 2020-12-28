@@ -5,7 +5,6 @@
         <div class="text-lg">
             {{ $title }}
         </div>
-
         <div class="mt-4">
             {{ $content }}
         </div>

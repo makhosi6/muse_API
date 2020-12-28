@@ -1,6 +1,5 @@
 <?php
 
-use App\Exceptions\RecordNotFound;
 use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +12,12 @@ use Illuminate\Support\Facades\Route;
 |
  */
 
-Route::get('/api/home', function () {
-    return response()->json([
-        "status_message"=>"Unauthorized action",
-        "status_code" => 403
-    ], 403);
-});
+// Route::get('/api/home', function () {
+//     return response()->json([
+//         "status_message"=>"Unauthorized action",
+//         "status_code" => 403
+//     ], 403);
+// });
 Route::get('/', function () {
     return view('welcome');
 });
