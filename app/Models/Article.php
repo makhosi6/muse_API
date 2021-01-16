@@ -44,27 +44,32 @@ class Article extends Model
      */
     protected $casts = [
         'isVid' => 'boolean',
-        'images' => 'array',
         'tags' => 'array',
         'authors' => 'array'
     ];
 
     protected $fillable = [
-        'url_src',
-        'src_name',
+        'id',
         'url',
         'headline',
         'lede',
         'thumbnail',
-        'src',
-        'type',
         'category',
         'catLink',
-        'tag',
-        'tags',
         'images',
+        'key',
+        'label',
+        'subject',
+        'format',
+        'about',
+        'src_name',
+        'src_url',
+        'src_logo',
         'isVid',
         'vidLen',
+        'type',
+        'tag',
+        'tags',
         'author',
         'authors',
         'date'

@@ -47,7 +47,6 @@
 
     @if ($this->user->tokens->isNotEmpty())
         <x-jet-section-border />
-
         <!-- Manage API Tokens -->
         <div class="mt-10 sm:mt-0">
             <x-jet-action-section>
@@ -67,7 +66,6 @@
                                 <div>
                                     {{ $token->name }}
                                 </div>
-
                                 <div class="flex items-center">
                                     @if ($token->last_used_at)
                                         <div class="text-sm text-gray-400">

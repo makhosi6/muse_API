@@ -5,6 +5,9 @@ use App\Exceptions\RecordNotFound;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+//
+use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\Crypt;
 
 // use App\Http\Controllers\ArticleController;
 
@@ -21,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/user', function (Request $request) {
     return $request->user()->currentAccessToken();
+
 });
 // Route::get('/articles', 'App\Http\Controllers\ArticleController@index');
 // Route::get('/articles/{article}', 'App\Http\Controllers\ArticleController@show');
