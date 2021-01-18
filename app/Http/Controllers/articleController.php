@@ -31,14 +31,12 @@ class articleController extends Controller
 
     public function store(Request $request)
     {
-        $article = Article::create($request->all());
-        return response()->json($article, 201);
-        // try {
-        //     $article = Article::create($request->all());
-        //     return response()->json($article, 201);
-        // } catch (\Exception $th) {
-        //     throw new BadRequest();
-        // }
+        try {
+            $article = Article::create($request->all());
+            return response()->json($article, 201);
+        } catch (\Exception $th) {
+            throw new BadRequest();
+        }
 
     }
 
