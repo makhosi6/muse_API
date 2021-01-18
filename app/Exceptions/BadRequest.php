@@ -29,7 +29,7 @@ class BadRequest extends Exception
             "status_message"=>"Bad Request",
             "status_code" => 400,
             "path" => $request->path(),
-            "method" => $request->method(),
+            "method" => $request->method()
         ], 400);
     }
 }
