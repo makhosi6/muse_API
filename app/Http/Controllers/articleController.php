@@ -7,14 +7,16 @@ use App\Exceptions\NotAllowed;
 use App\Exceptions\RecordNotFound;
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Resources\ArticleCollection;
 
 class articleController extends Controller
 {
     //
     public function index()
     {
+        return Article::paginate();
         try {
-            return Article::all();
+            return new ArticleCollection(Article::paginate());
         } catch (\Exception $th) {
             throw new RecordNotFound();
         }

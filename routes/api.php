@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Route;
 //
 use Illuminate\Contracts\Encryption\DecryptException;
 use Illuminate\Support\Facades\Crypt;
+use App\Models\Article;
+use App\Http\Resources\ArticleResource;
 
 // use App\Http\Controllers\ArticleController;
 
