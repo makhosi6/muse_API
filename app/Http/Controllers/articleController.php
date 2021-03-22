@@ -14,9 +14,9 @@ class articleController extends Controller
     //
     public function index()
     {
-        return Article::paginate();
         try {
-            return new ArticleCollection(Article::paginate());
+            // return new ArticleCollection(Article::paginate());
+            return Article::paginate();
         } catch (\Exception $th) {
             throw new RecordNotFound();
         }
