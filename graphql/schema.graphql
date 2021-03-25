@@ -7,12 +7,24 @@ scalar DateTime @scalar(class: "Nuwave\\Lighthouse\\Schema\\Types\\Scalars\\Date
 type Query {
     users: [User!]! @paginate(defaultCount: 10)
     user(id: ID @eq): User @find
+
+    articles: [Article!]! @paginate(defaultCount: 20)
+    article(id: ID @eq): Article @find
 }
 
 type User {
     id: ID!
     name: String!
     email: String!
+    username: String!
+    created_at: DateTime!
+    updated_at: DateTime!
+}
+type Article {
+    id: ID!
+    url: String!
+    lede: String
+    headline: String!
     created_at: DateTime!
     updated_at: DateTime!
 }
