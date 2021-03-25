@@ -1,25 +1,35 @@
-type User {
+"Article Schema"
+
+type Article {
   id: ID!
-  name: String!
-  email: String!
+  url: String
+  headline: String
+  lede: String
+  thumbnail: String
+  category: String
+  catLink: String
+  images: String
+  key: String
+  label: String
+  subject: String
+  format: String
+  about: String
+  src_name: String
+  src_url: String
+  src_logo: String
+  isVid: Boolean
+  vidLen: String
+  type: String
+  tag: String
+  tags: String
+  author: String
+  authors: String
+  date: String
 }
 
 type Query {
-  user(id: ID! @eq): User @find
-  users: [User!]! @paginate
-}
-type UserPaginator {
-  paginatorInfo: PaginatorInfo!
-  data: [User!]!
+  article(id: ID! @eq): Article @find
+  articles: [Article!]! @paginate
+  filtered(type: String! @eq): Article @paginate
 }
 
-type PaginatorInfo {
-  count: Int!
-  currentPage: Int!
-  firstItem: Int
-  hasMorePages: Boolean!
-  lastItem: Int
-  lastPage: Int!
-  perPage: Int!
-  total: Int!
-}
