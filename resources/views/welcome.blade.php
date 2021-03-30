@@ -18,6 +18,9 @@
             body {
                 font-family: 'Nunito';
             }
+            a{
+            text-decoration: underline !important;
+            }
         </style>
     </head>
     <body style="font-family: monospace; font-weight:bolder; text-decoration: none;" class="antialiased">
