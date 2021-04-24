@@ -28,8 +28,6 @@ Route::middleware(['auth:sanctum', 'verified'])->get('dashboard', function () {
 })->name('dashboard');
 
 
-Route::get('/user', function (Request $request) {
-
-    return $request->user();
-
-});
+// Route::get('/user', function (Request $request) {
+//     return $request->user();
+// });
