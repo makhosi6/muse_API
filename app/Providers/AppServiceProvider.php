@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         //Sort the DigitalOcean Managed Database Cluster MySQL 8 - sql_require_primary_key error
-        DB::statement('SET SESSION sql_require_primary_key=0');
+        //DB::statement('SET SESSION sql_require_primary_key=0');
 
         Schema::defaultStringLength(191);
 
