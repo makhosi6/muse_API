@@ -22,7 +22,7 @@ return array(
     'App\\Http\\Controllers\\Controller' => $baseDir . '/app/Http/Controllers/Controller.php',
     'App\\Http\\Controllers\\FilterArticles' => $baseDir . '/app/Http/Controllers/FilterArticles.php',
     'App\\Http\\Controllers\\Profile' => $baseDir . '/app/Http/Controllers/Profile.php',
-    'App\\Http\\Controllers\\articleController' => $baseDir . '/app/Http/Controllers/articleController.php',
+    'App\\Http\\Controllers\\ArticleController' => $baseDir . '/app/Http/Controllers/ArticleController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\AuthMiddleware' => $baseDir . '/app/Http/Middleware/AuthMiddleware.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',

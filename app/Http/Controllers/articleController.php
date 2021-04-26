@@ -9,7 +9,7 @@ use App\Models\Article;
 use Illuminate\Http\Request;
 use App\Http\Resources\ArticleCollection;
 
-class articleController extends Controller
+class ArticleController extends Controller
 {
     //
     public function index()
