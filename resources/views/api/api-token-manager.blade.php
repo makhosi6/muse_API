@@ -20,14 +20,21 @@
             <!-- Token Permissions -->
             @if (Laravel\Jetstream\Jetstream::hasPermissions())
                 <div class="col-span-6">
-                    <x-jet-label for="permissions" value="{{ __('Permissions') }}" />
+                    <x-jet-label for="permissions" value="{{ __("Permissions") }}" />
 
                     <div class="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
                         @foreach (Laravel\Jetstream\Jetstream::$permissions as $permission)
+                            @if ($permission == 'delete' || $permission == 'update' || $permission ==  'create')
+                            <label class="flex items-center">
+                                <input type="checkbox" class="form-checkbox" value="{{ $permission }}" title="blocked" disabled wire:model.defer="createApiTokenForm.permissions">
+                                <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
+                            </label>
+                            @else
                             <label class="flex items-center">
                                 <input type="checkbox" class="form-checkbox" value="{{ $permission }}" wire:model.defer="createApiTokenForm.permissions">
                                 <span class="ml-2 text-sm text-gray-600">{{ $permission }}</span>
                             </label>
+                            @endif
                         @endforeach
                     </div>
                 </div>

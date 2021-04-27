@@ -27,7 +27,7 @@
                                 <x-slot name="content">
                                     <div style="border-color: #d2d6dc;border-width: 1px;border-radius: .375rem;padding: .5rem .75rem;" class="mt-1 block w-full" >
                                         <span style="color: #374151; font-weight: bold">
-                                          {{"not available"}}
+                                          {{"**************"}}
                                         </span>
                                     </div>
                                     <div class="mt-5">
