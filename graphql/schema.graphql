@@ -1,4 +1,4 @@
-"Article Schema"
+"Article Schema, also get filtered items"
 
 type Article {
   id: ID!
