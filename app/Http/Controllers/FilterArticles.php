@@ -15,7 +15,7 @@ class FilterArticles extends Controller
     public function categories($category)
     {
         try {
-            $categories = Article::where('category', '=', $category)->paginate(15)->get();
+            $categories = Article::where('category', '=', $category)->paginate(30);
             return $categories;
         } catch (\Exception $th) {
             throw new RecordNotFound();
@@ -23,7 +23,7 @@ class FilterArticles extends Controller
     }
     public function trends($num){
         try {
-            $trends = Article::where('type', '=', 'trends')->paginate($num)->get();
+            $trends = Article::where('type', '=', 'trends')->paginate($num);
             return $trends;
         } catch (\Exception $th) {
             throw new RecordNotFound();
