@@ -3,6 +3,8 @@
 //
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\Artisan;
 
 // use App\Http\Controllers\ArticleController;
 
@@ -40,3 +42,14 @@ Route::get('/filter/hot-trends', 'App\Http\Controllers\FilterArticles@hotTrends'
 //     'photos' => PhotoController::class,
 //     'posts' => PostController::class,
 // ]);
+
+
+// Clear application cache:
+///no auth
+Route::get('/421-clear-cache', function (Request $request) {
+    return Cache::flush();
+});
+Route::get('/420-clear-cache', function() {
+    $exitCode = Artisan::call('cache:clear');
+    return 'Application cache cleared';
+});
