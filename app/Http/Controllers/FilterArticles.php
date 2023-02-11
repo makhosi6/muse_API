@@ -39,9 +39,16 @@ class FilterArticles extends Controller
     }
     public function all(){
         try {
-           return Article::all();
+            return Article::paginate();
         } catch (\Exception $th) {
             return $th;
         }
     }
 }
+
+
+
+// articles
+// topics
+// trends
+// hot trends
